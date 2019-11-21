@@ -24,6 +24,66 @@
   </properties>
 
   <dependencies>
+    <!-- for for drainer -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-all</artifactId>
+      <version>5.11.0.redhat-630396</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-broker -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-broker</artifactId>
+      <version>5.11.0.redhat-630396</version>
+    </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.activemq/artemis-server -->
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-server</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.activemq/artemis-server -->
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-jms-server</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
+
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-amqp-protocol</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-stomp-protocol</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-mqtt-protocol</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.activemq/activeio-core -->
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>activeio-core</artifactId>
+  <version>3.1.4</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-kahadb-store -->
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>activemq-kahadb-store</artifactId>
+  <version>5.11.0.redhat-630396</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>activemq-jdbc-store</artifactId>
+  <version>5.11.0.redhat-630396</version>
+</dependency>
+
     <dependency>
         <groupId>org.apache.qpid</groupId>
         <artifactId>qpid-jms-client</artifactId>

@@ -23,11 +23,12 @@ import org.slf4j.LoggerFactory;
  */
 public class App {
     public static void main(String[] args) {
-        //System.out.println("Hello World!");
-        //mvn exec:java -Dexec.mainClass="com.redhat.demo.App" 
-        //-D broker.url="failover://(amqp://192.168.0.110:5672)" -Dsend.queue=queue1 -Dsend.msg=helloworld! -Dsend.mode=SEND/RECV
+        // System.out.println("Hello World!");
+        // mvn exec:java -Dexec.mainClass="com.redhat.demo.App"
+        // -D broker.url="failover://(amqp://192.168.0.110:5672)" -Dsend.queue=queue1
+        // -Dsend.msg=helloworld! -Dsend.mode=SEND/RECV
         App client1 = new App(System.getProperty("broker.url"));
-        //SEND or RECV
+        // SEND or RECV
         String mode = System.getProperty("send.mode");
 
         client1.connect(mode);
@@ -38,16 +39,27 @@ public class App {
 
     public App(String brokerUrl) {
         this.brokerUrl = brokerUrl;
-        log.info("connecting to "+brokerUrl);
+        log.info("connecting to " + brokerUrl);
     }
 
     private void send(Session session, String message, Queue queue) throws JMSException {
         MessageProducer sender = session.createProducer(queue);
         sender.setDeliveryMode(DeliveryMode.PERSISTENT);
-        for (int i = 0; i < 3; i++) {
-            //sender.send(session.createTextMessage(message));
-            sender.send(session.createTextMessage(message+"-"+i));
-            log.info("Sent msg "+(i+1)+": "+message);
+        // for (int i = 0; i < 3; i++) {
+        int i = 0;
+        while (true) {
+            try {
+                // sender.send(session.createTextMessage(message));
+                String text = message + "-"+(i++);
+                sender.send(session.createTextMessage(text));
+                log.info("Sent msg " + i + ": " + text);
+                log.info("sleep for 2 s");
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
         }
         //sender.send(session.createTextMessage("END"));
         //log.info("Sent msg END");
