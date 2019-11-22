@@ -79,6 +79,7 @@ public class Drainer {
             System.out.println("dest "+destinations[1].getQualifiedName());
             //targetSession.crea
             System.out.println(targetSession);
+            
         } catch (IOException | URISyntaxException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

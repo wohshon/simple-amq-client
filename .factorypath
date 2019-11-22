@@ -2,8 +2,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/activemq-all/5.11.0.redhat-630396/activemq-all-5.11.0.redhat-630396.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/activemq-broker/5.11.0.redhat-630396/activemq-broker-5.11.0.redhat-630396.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/activemq-client/5.11.0.redhat-630396/activemq-client-5.11.0.redhat-630396.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/fusesource/hawtbuf/hawtbuf/1.11.0.redhat-2/hawtbuf-1.11.0.redhat-2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/activemq-openwire-legacy/5.11.0.redhat-630396/activemq-openwire-legacy-5.11.0.redhat-630396.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/google/guava/guava/18.0.0.redhat-1/guava-18.0.0.redhat-1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.6.3/jackson-databind-2.6.3.jar" enabled="true" runInBatchMode="false"/>
@@ -43,10 +41,13 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/commons-io/commons-io/2.6/commons-io-2.6.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/geronimo/specs/geronimo-json_1.0_spec/1.0.0.alpha-1-redhat-1/geronimo-json_1.0_spec-1.0.0.alpha-1-redhat-1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-jms-server/2.10.0.redhat-00004/artemis-jms-server-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-jms-client/2.10.0.redhat-00004/artemis-jms-client-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-service-extensions/2.10.0.redhat-00004/artemis-service-extensions-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/geronimo/specs/geronimo-jms_2.0_spec/1.0.0.alpha-2-redhat-2/geronimo-jms_2.0_spec-1.0.0.alpha-2-redhat-2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1.redhat-2/geronimo-jta_1.1_spec-1.1.1.redhat-2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-jms-client/2.10.0.redhat-00004/artemis-jms-client-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-openwire-protocol/2.10.0.redhat-00004/artemis-openwire-protocol-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/fusesource/hawtbuf/hawtbuf/1.11.0.redhat-2/hawtbuf-1.11.0.redhat-2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1.redhat-2/geronimo-jms_1.1_spec-1.1.1.redhat-2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-amqp-protocol/2.10.0.redhat-00004/artemis-amqp-protocol-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/qpid/proton-j/0.33.2.redhat-00001/proton-j-0.33.2.redhat-00001.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-stomp-protocol/2.10.0.redhat-00004/artemis-stomp-protocol-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
@@ -55,6 +56,8 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/logging/jboss-logging-annotations/2.2.0.Final/jboss-logging-annotations-2.2.0.Final.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/jdeparser/jdeparser/2.0.3.Final/jdeparser-2.0.3.Final.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/io/netty/netty-codec-mqtt/4.1.34.Final-redhat-00002/netty-codec-mqtt-4.1.34.Final-redhat-00002.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-hornetq-protocol/2.10.0.redhat-00004/artemis-hornetq-protocol-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/artemis-hqclient-protocol/2.10.0.redhat-00004/artemis-hqclient-protocol-2.10.0.redhat-00004.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/activemq/activeio-core/3.1.4/activeio-core-3.1.4.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/geronimo/specs/geronimo-j2ee-management_1.1_spec/1.0.1/geronimo-j2ee-management_1.1_spec-1.0.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/commons-logging/commons-logging/1.1/commons-logging-1.1.jar" enabled="true" runInBatchMode="false"/>

@@ -186,11 +186,16 @@ under the License.
                     "anycastPrefix=jms.queue.;multicastPrefix=jms.topic." to the acceptor url.
                     See https://issues.apache.org/jira/browse/ARTEMIS-1644 for more information. -->
 
-         <!-- Acceptor for every supported protocol -->
+         <!-- Acceptor for every supported protocol 
+         <acceptor name="artemis">tcp://192.168.0.110:61616?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;useEpoll=true;amqpCredits=1000;amqpLowCredits=300</acceptor>
+         -->
          <acceptor name="artemis">tcp://192.168.0.110:61616?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE;useEpoll=true;amqpCredits=1000;amqpLowCredits=300</acceptor>
 
-         <!-- AMQP Acceptor.  Listens on default AMQP port for AMQP traffic.-->
+         <!-- AMQP Acceptor.  Listens on default AMQP port for AMQP traffic.
+            
          <acceptor name="amqp">tcp://192.168.0.110:5672?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;useEpoll=true;amqpCredits=1000;amqpLowCredits=300</acceptor>
+      -->
+<acceptor name="amqp">tcp://192.168.0.110:8672?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=AMQP;useEpoll=true;amqpCredits=1000;amqpLowCredits=300</acceptor>
 
          <!-- STOMP Acceptor. -->
          <acceptor name="stomp">tcp://192.168.0.110:61613?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=STOMP;useEpoll=true</acceptor>

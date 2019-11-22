@@ -53,13 +53,15 @@ public class App {
                 String text = message + "-"+(i++);
                 sender.send(session.createTextMessage(text));
                 log.info("Sent msg " + i + ": " + text);
-                log.info("sleep for 2 s");
-                Thread.sleep(2000);
+                log.info("sleep for 10 ms");
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-
+            if (i == 5000) {
+                break;
+            }
         }
         //sender.send(session.createTextMessage("END"));
         //log.info("Sent msg END");

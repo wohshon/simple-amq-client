@@ -48,6 +48,16 @@
   <artifactId>artemis-jms-server</artifactId>
   <version>2.10.0.redhat-00004</version>
 </dependency>
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-jms-client</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-openwire-protocol</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
 
 <dependency>
   <groupId>org.apache.activemq</groupId>
@@ -62,6 +72,12 @@
 <dependency>
   <groupId>org.apache.activemq</groupId>
   <artifactId>artemis-mqtt-protocol</artifactId>
+  <version>2.10.0.redhat-00004</version>
+</dependency>
+
+<dependency>
+  <groupId>org.apache.activemq</groupId>
+  <artifactId>artemis-hornetq-protocol</artifactId>
   <version>2.10.0.redhat-00004</version>
 </dependency>
 
@@ -83,12 +99,11 @@
   <artifactId>activemq-jdbc-store</artifactId>
   <version>5.11.0.redhat-630396</version>
 </dependency>
-
-    <dependency>
-        <groupId>org.apache.qpid</groupId>
-        <artifactId>qpid-jms-client</artifactId>
-        <version>0.45.0.redhat-00002</version>
-    </dependency>
+<dependency>
+    <groupId>org.apache.qpid</groupId>
+    <artifactId>qpid-jms-client</artifactId>
+    <version>0.45.0.redhat-00002</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
 <dependency>
     <groupId>org.slf4j</groupId>
