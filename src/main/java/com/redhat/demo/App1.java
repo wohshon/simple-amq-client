@@ -21,13 +21,13 @@ import org.slf4j.LoggerFactory;
  * Hello world!
  *
  */
-public class App {
+public class App1 {
     public static void main(String[] args) {
         // System.out.println("Hello World!");
         // mvn exec:java -Dexec.mainClass="com.redhat.demo.App"
         // -D broker.url="failover://(amqp://192.168.0.110:5672)" -Dsend.queue=queue1
         // -Dsend.msg=helloworld! -Dsend.mode=SEND/RECV
-        App client1 = new App(System.getProperty("broker.url"));
+        App1 client1 = new App1(System.getProperty("broker.url"));
         // SEND or RECV
         String mode = System.getProperty("send.mode");
 
@@ -37,7 +37,7 @@ public class App {
     Logger log = LoggerFactory.getLogger(this.getClass());
     private String brokerUrl;
 
-    public App(String brokerUrl) {
+    public App1(String brokerUrl) {
         this.brokerUrl = brokerUrl;
         log.info("connecting to " + brokerUrl);
     }
@@ -84,7 +84,7 @@ public class App {
     }
     private void connect(String mode) {
         Connection connection = null;
-        //Connection connection1 = null;
+        Connection connection1 = null;
 
         ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin",this.brokerUrl);
         //ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin");
@@ -92,22 +92,28 @@ public class App {
 
         try {
              connection = connectionFactory.createConnection();
-           // connection1 = connectionFactory.createConnection();
+             connection1 = connectionFactory.createConnection();
             //Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             Session session = null;
+            Session session1 = null;
             Queue queue = null;
+            Queue queue1 = null;
             //String mode = System.getProperty("send.mode");
+            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+            session1 = connection1.createSession(false, Session.AUTO_ACKNOWLEDGE);
             if ("SEND".equals(mode)) {
-                session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+                //session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
                 queue = session.createQueue(System.getProperty("send.queue"));
+                queue1 = session.createQueue(System.getProperty("send.queue"));
                 SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss.SSSS");
                 Date dt = new Date();
                 String message=System.getProperty("send.msg")+"-"+sdf.format(dt);
                     send(session, message, queue);
             }
             if ("RECV".equals(mode)) {
-                session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+                //session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
                 queue = session.createQueue(System.getProperty("send.queue"));
+                queue1 = session.createQueue(System.getProperty("send.queue"));
                 connection.start();
                 receive(session, queue);
             }
