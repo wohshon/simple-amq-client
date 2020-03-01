@@ -46,23 +46,25 @@ public class App {
         MessageProducer sender = session.createProducer(queue);
         sender.setDeliveryMode(DeliveryMode.PERSISTENT);
         // for (int i = 0; i < 3; i++) {
-        int i = 0;
-        while (true) {
-            try {
+//        int i = 0;
+//        while (true) {
+//            try {
                 // sender.send(session.createTextMessage(message));
-                String text = message + "-"+(i++);
+//                String text = message + "-"+(i++);
+                 String text = message;   
                 sender.send(session.createTextMessage(text));
-                log.info("Sent msg " + i + ": " + text);
-                log.info("sleep for 10 ms");
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
+                log.info("message sent:"+text);
+//                log.info("Sent msg " + i + ": " + text);
+//                log.info("sleep for 10 ms");
+ //               Thread.sleep(10);
+//            } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            if (i == 10) {
-                break;
-            }
-        }
+//                e.printStackTrace();
+//            }
+//            if (i == 10) {
+//                break;
+//            }
+//        }
         //sender.send(session.createTextMessage("END"));
         //log.info("Sent msg END");
     }
@@ -87,6 +89,8 @@ public class App {
         //Connection connection1 = null;
 
         ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin",this.brokerUrl);
+        // working
+        // ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin",this.brokerUrl);
         //ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin");
 //((JmsConnectionFactory)connectionFactory).setConnectionLoadBalancingPolicyClassName("org.apache.activemq.artemis.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy");
 
