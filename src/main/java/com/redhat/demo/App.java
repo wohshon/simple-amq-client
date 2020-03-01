@@ -88,7 +88,9 @@ public class App {
         Connection connection = null;
         //Connection connection1 = null;
 
-        ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin",this.brokerUrl);
+        ConnectionFactory connectionFactory = new JmsConnectionFactory(this.brokerUrl);
+//        ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin",this.brokerUrl);
+
         // working
         // ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin",this.brokerUrl);
         //ConnectionFactory connectionFactory = new JmsConnectionFactory("admin","admin");

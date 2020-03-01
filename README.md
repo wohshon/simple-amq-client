@@ -34,3 +34,14 @@ Because when the amqps scheme is used to specify an SSL/TLS connection, the host
 no need to set verifyHost to false if you have a proper domain name
 
     mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="failover:(amqps://dev.demo.com:5673?transport.trustStoreLocation=./client.ts&transport.trustStorePassword=psword)" -Dsend.queue=queue2 -Dsend.msg=sslHello -Dsend.mode=RECV
+
+
+##OCP 
+
+
+        oc secret new ex-aao-amqp-secret broker.ks client.ts
+
+        oc secrets add sa/amq-broker-operator secret/ex-aao-amqp-secret
+
+
+        mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-integration.apps.cluster-sgp-fa8b.sgp-fa8b.example.opentlc.com:443?transport.trustStoreLocation=./client.ts&transport.trustStorePassword=password&transport.keyStoreLocation=./client.ks&transport.keyStorePassword=password&transport.verifyHost=false" -Dsend.queue=myAddress0.myQueue0 -Dsend.msg=sslHello -Dsend.mode=RECV
