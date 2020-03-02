@@ -12,6 +12,30 @@ mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="failover://(
 
 ## Setting up
 
+TL;DR
+
+1) Generate certs and ts ks
+
+2) create secret based on the ts and ks 
+    
+    oc secret new ex-aao-amqp-secret broker.ks client.ts
+
+
+3) deploy amq operator - broker , address 
+(scaledown component will be auto deployed)
+
+add to sa (sa will be created when operator is deployed)
+    
+    oc secrets add sa/amq-broker-operator secret/ex-aao-amqp-secret
+
+
+4) create service
+
+5) expose route and change to tls termination passthrough
+
+
+## Details here:
+
 Sample commands to generate cert... 
 
 
@@ -45,3 +69,34 @@ no need to set verifyHost to false if you have a proper domain name
 
 
         mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="amqps://amqp-integration.apps.cluster-sgp-fa8b.sgp-fa8b.example.opentlc.com:443?transport.trustStoreLocation=./client.ts&transport.trustStorePassword=password&transport.keyStoreLocation=./client.ks&transport.keyStorePassword=password&transport.verifyHost=false" -Dsend.queue=myAddress0.myQueue0 -Dsend.msg=sslHello -Dsend.mode=RECV
+
+
+
+## Sample yaml for CR
+
+        spec:
+        acceptors:
+            - name: amqp
+            needClientAuth: false
+            port: 5671
+            protocols: amqp
+            sslEnabled: true
+            sslSecret: ex-aao-amqp-secret
+            verifyHost: false
+
+## Service
+
+
+        spec:
+        clusterIP: None
+        ports:
+        - name: amqp
+            port: 5671
+            protocol: TCP
+            targetPort: 5671
+        publishNotReadyAddresses: true
+        selector:
+            ActiveMQArtemis: ex-aao
+            application: ex-aao-app
+        sessionAffinity: None
+        type: ClusterIP
