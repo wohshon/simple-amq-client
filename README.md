@@ -14,6 +14,8 @@ mvn exec:java -Dexec.mainClass="com.redhat.demo.App" -D broker.url="failover://(
 
 TL;DR
 
+### Updates for OCP client, pom.xml with new netty-all dependencies, `oc secrets` new commands for 4.4
+
 1) Generate certs and ts ks
 
 2) create secret based on the ts and ks 
