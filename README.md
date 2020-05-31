@@ -18,7 +18,11 @@ TL;DR
 
 2) create secret based on the ts and ks 
     
-    oc secret new ex-aao-amqp-secret broker.ks client.ts
+   `oc secret new ex-aao-amqp-secret broker.ks client.ts`
+
+    For OCP 4.4 onwards
+
+    `oc create secret generic ex-aao-amqp-secret --from-file=broker.ks --from-file=client.ts`
 
 
 3) deploy amq operator - broker , address 
@@ -27,6 +31,10 @@ TL;DR
 add to sa (sa will be created when operator is deployed)
     
     oc secrets add sa/amq-broker-operator secret/ex-aao-amqp-secret
+
+    For OCP 4.4 onwards:
+
+   `oc secrets link sa/amq-broker-operator secret/ex-aao-amqp-secret`
 
 
 4) create service
